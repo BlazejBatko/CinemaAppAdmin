@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:renderers="clr-namespace:CinemaApp.Renderers"
+             mc:Ignorable="d"
+             x:Class="CinemaApp.Pages.SignupPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#1D1A1A">
+    
+    <ContentPage.Content>
+        <StackLayout Margin="20"
+                     Spacing="15">
+
+            <Image Source="adduser.png"
+                   Margin="0,40,0,0"
+                   HorizontalOptions="Center"
+                   HeightRequest="120"
+                   WidthRequest="120" />
+            <Label Text="Aby korzystać z naszej platformy, zacznij od założenia konta"
+                   Margin="0,40,0,0"
+                   TextColor="#9369A2"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   FontSize="Large"
+                   HorizontalOptions="CenterAndExpand" />
+
+            <renderers:BorderlessEntry Placeholder="Imię"
+                                       x:Name="EntName"
+                                       TextColor="White"
+                                       PlaceholderColor="Gray"
+                                       BackgroundColor="#1D1A1A"
+                                       Margin="0, 40, 0 ,0"
+                                       HorizontalOptions="CenterAndExpand"
+                                       WidthRequest="300"/>
+            <BoxView HeightRequest="1" 
+                     BackgroundColor="White" Margin="0,-15,0,0"/>
+            <renderers:BorderlessEntry Placeholder="E-mail"
+                                       x:Name="EntEmail"
+                                       TextColor="White"
+                                       PlaceholderColor="Gray"
+                                       BackgroundColor="#1D1A1A"
+                                       HorizontalOptions="CenterAndExpand"
+                                       WidthRequest="300"/>
+            
+            <BoxView HeightRequest="1"
+                     BackgroundColor="White"
+                     Margin="0,-15,0,0" />
+
+            <renderers:BorderlessEntry Placeholder="Hasło"
+                                       x:Name="EntPassword"
+                                       IsPassword="True"
+                                       TextColor="White"
+                                       PlaceholderColor="Gray"
+                                       BackgroundColor="#11A1A"
+                                      HorizontalOptions="CenterAndExpand"
+                                       WidthRequest="300"
+                                       />
+            <BoxView HeightRequest="1"
+                     BackgroundColor="White"
+                     Margin="0,-15,0,0" />
+
+
+
+            <Label Text=""
+                   x:Name="InvEmail"
+                   TextColor="Red"
+                   HorizontalTextAlignment="Center">
+
+            </Label>
+
+            <Image Source="signup.png"
+                   Margin="0,40,0,0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="ImgSignup" Tapped="ImgSignup_Tapped" />
+                </Image.GestureRecognizers>
+            </Image>
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="Center"
+                         Margin="0,20,0,0">
+                <Label Text="Posiadasz już konto?"
+                       TextColor="White" />
+                <Label Text="Zaloguj się"
+                       TextDecorations="Underline"
+                       TextColor="#9369A2">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="LblLogin" Tapped="LblLogin_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
