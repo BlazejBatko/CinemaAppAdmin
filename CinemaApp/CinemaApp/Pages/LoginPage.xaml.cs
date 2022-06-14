@@ -18,23 +18,23 @@ namespace CinemaApp.Pages
             InitializeComponent();
         }
 
-        private void ImgBack_Tapped(object sender, EventArgs e) //cofanie do poprzedniej strony
+        private void ImgBack_Tapped(object sender, EventArgs e)
         {
             Navigation.PopModalAsync();
         }
 
         private async void ImgLogin_Tapped(object sender, EventArgs e)
         {
-          var response =   await ApiService.Login(EntEmail.Text, EntPassword.Text); //nawigujemy po poprawnym logowaniu na HomePage
+            var response = await ApiService.Login(EntEmail.Text, EntPassword.Text);
             Preferences.Set("email", EntEmail.Text);
             Preferences.Set("password", EntPassword.Text);
-          if(response)
+            if (response)
             {
-                Application.Current.MainPage = new NavigationPage(new HomePage());
+                Application.Current.MainPage = new NavigationPage(new HomePage());   
             }
             else
             {
-                await DisplayAlert("Oops", "Coś poszło nie tak", "Anuluj"); //w innym wypadku wyświetlamy błąd
+                await DisplayAlert("Oops", "Something went wrong", "Cancel");
             }
         }
     }

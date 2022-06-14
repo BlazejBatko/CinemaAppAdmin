@@ -17,7 +17,7 @@ namespace CinemaApp
             var accessToken = Preferences.Get("accessToken", string.Empty);
             if (string.IsNullOrEmpty(accessToken))
             {
-                MainPage = new NavigationPage(new SignupPage());
+                MainPage = new NavigationPage(new LoginPage());
             }
             else
             {
