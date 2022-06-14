@@ -29,7 +29,7 @@ namespace CinemaApp.Pages
 
             if (!CrossMedia.Current.IsPickPhotoSupported)
             {
-                await DisplayAlert("Sorry", "Your device doesn't support this feature", "OK");
+                await DisplayAlert(":(", "Niestety twoje urządzenie nie wspiera danej funkcji", "Anuluj");
                 return;
             }
 
@@ -68,11 +68,11 @@ namespace CinemaApp.Pages
             var response = await ApiService.AddMovie(file, movie);
             if (!response)
             {
-                await DisplayAlert("Oops", "Something went wrong", "Cancel");
+                await DisplayAlert(":(", "Niestety nie udało się dodać filmu", "Anuluj");
             }
             else
             {
-                await DisplayAlert("", "Movie has been added", "Alright");
+                await DisplayAlert(":)", "Film został dodany", "Kontynuuj");
                 await Navigation.PopModalAsync();
             }
         }
